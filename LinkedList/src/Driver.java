@@ -28,12 +28,19 @@ public class Driver {
 		
 		SinglyLinkedList temp = new SinglyLinkedList();
 
-		Node a = new Node(1);
 		
-		temp.add(a);
 		
-		Node curr = a;
+		temp.add(new Node(1));
+		temp.add(new Node(2));
+		temp.add(new Node(3));
+		temp.add(new Node(4));
 		
+		System.out.println(temp.toString());
+
+		
+		
+		
+	
 
 		
 		

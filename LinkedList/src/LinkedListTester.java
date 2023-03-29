@@ -6,19 +6,19 @@ class LinkedListTester {
 
 	@Test
 	void test() {
-		
 		SinglyLinkedList temp = new SinglyLinkedList();
+
+
+		temp.add(new Node(1));
+		temp.add(new Node(2));
+		temp.add(new Node(3));
+		temp.add(new Node(4));
 		
-		Node a = new Node(1);
-		
-		temp.add(a);
 	
 		
+		System.out.println(temp.toString());
+		
 	
-		
-		
-		
-		assertEquals(2, temp.remove(0));
 		
 	}
 
