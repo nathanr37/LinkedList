@@ -35,13 +35,16 @@ public class SinglyLinkedList {
 
 	public String toString() {
 		/* to be completed by student */
-		String result = "";
+		String result = "[";
 		Node n = head;
 
-		while (n != null) {
-			result += n.getData() + " ";
+		for(int i = 0; i<size-1; i++) {
+			result += n.getData() + ", ";
 			n = n.next;
 		}
+		
+		result += n.getData() + "]";
+
 
 		return result;
 	}
