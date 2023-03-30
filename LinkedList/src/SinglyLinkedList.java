@@ -72,14 +72,16 @@ public class SinglyLinkedList {
 
 		} else {
 
-			for (int i = 1; i < target; i++) {
+			for (int i = 0; i < target-1; i++) {
 				n = n.next;
 			}
 
 			// set temp = to 2 nodes later
 			temp = n.next;
-			remove = n.next; // this n.next is the node you remove
 			temp = temp.next;
+			
+			remove = n.next; // this n.next is the node you remove
+			
 
 			// set n.next = to the node after skip
 			n.next = temp;

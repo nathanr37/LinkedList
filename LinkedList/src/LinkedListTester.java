@@ -9,10 +9,10 @@ class LinkedListTester {
 		SinglyLinkedList temp = new SinglyLinkedList();
 
 
-		temp.add(new Node(1));
-		temp.add(new Node(2));
-		temp.add(new Node(3));
-		temp.add(new Node(7));
+		temp.add(new Node(-1));
+		temp.add(new Node(-2));
+		temp.add(new Node(-3));
+		temp.add(new Node(-7));
 		
 		
 		System.out.println("Original: " + temp.toString());
