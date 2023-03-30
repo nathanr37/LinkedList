@@ -48,10 +48,10 @@ public class SinglyLinkedList {
 		Node temp;
 		Node remove;
 
-		for (int i = 1; i < target-1; i++) {
+		for (int i = 1; i < target-2; i++) {
 			n = n.next;
 		}
-		
+		 
 		//set temp = to 2 nodes later 
 		temp = n.next;  
 		remove = n.next;  //this n.next is the node you remove
