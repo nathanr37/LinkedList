@@ -16,15 +16,20 @@ public class SinglyLinkedList {
 		return size;
 	}
 
-	Node get(int index) { // currently returning node address instead of value
+	Node get(int index) { // get value (must add .getData() )
 
 		Node n = head;
 
-		for (int i = 1; i < index; i++) {
-			n = n.next;
-		}
+		if (index > size) {
+			return null;
+		} else {
 
-		return n;
+			for (int i = 0; i < index; i++) {
+				n = n.next;
+			}
+
+			return n;
+		}
 
 	}
 
@@ -48,22 +53,41 @@ public class SinglyLinkedList {
 		Node temp;
 		Node remove;
 
-		for (int i = 1; i < target-2; i++) {
-			n = n.next;
-		}
-		 
-		//set temp = to 2 nodes later 
-		temp = n.next;  
-		remove = n.next;  //this n.next is the node you remove
-		temp = temp.next;
-		
-		//set n.next = to the node after skip 
-		n.next = temp;
-		size -= 1;
-		
-		//return the value you removed
-		return remove;
+		if(target > size) {
+			return null;
+		} else if (target == 0) {
+			head = n.next;
+			size -= 1;
+			return n;
 
+		} else if (target == size) {
+			for (int i = 0; i <= target - 1; i++) {
+				n = n.next;
+			}
+			size -= 1;
+			remove = n.next;
+			n.next = null;
+
+			return remove;
+
+		} else {
+
+			for (int i = 1; i < target; i++) {
+				n = n.next;
+			}
+
+			// set temp = to 2 nodes later
+			temp = n.next;
+			remove = n.next; // this n.next is the node you remove
+			temp = temp.next;
+
+			// set n.next = to the node after skip
+			n.next = temp;
+			size -= 1;
+
+			// return the value you removed
+			return remove;
+		}
 	}
 
 	public void add(Node n) {
