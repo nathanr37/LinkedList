@@ -62,7 +62,7 @@ public class SinglyLinkedList {
 
 		} else if (target == size) {
 			for (int i = 0; i <= target - 1; i++) {
-				n = n.next;
+				n=n.next;
 			}
 			size -= 1;
 			remove = n.next;
