@@ -6,13 +6,15 @@ class LinkedListTester {
 
 	@Test
 	void test() {
-		SinglyLinkedList temp = new SinglyLinkedList();
+		DoublyLinkedList temp = new DoublyLinkedList();
 
 
 		temp.add(new Node(-1));
 		temp.add(new Node(-2));
 		temp.add(new Node(-3));
 		temp.add(new Node(-7));
+		
+		
 		
 		
 		System.out.println("Original: " + temp.toString());

@@ -1,0 +1,130 @@
+
+public class DoublyLinkedList{
+
+	Node head;
+	Node tail;
+	
+	Node prev;
+	Node hold;
+	private int size; 
+	
+	public DoublyLinkedList() {
+		
+		size = 0; 
+		head = null;
+		tail = null;
+	}
+	
+	public int size() {
+		return size;
+	}
+	
+	Node get(int index) { // get value (must add .getData() )
+
+		Node n = head;
+
+		if (index > size) {
+			return null;
+		} else {
+
+			for (int i = 0; i < index; i++) {
+				n = n.next;
+			}
+
+			return n;
+		}
+
+	}
+	
+	public String toString() {
+		/* to be completed by student */
+		String result = "[";
+		Node n = head;
+
+		for (int i = 0; i < size - 1; i++) {
+			result += n.getData() + ", ";
+			n = n.next;
+		}
+
+		result += n.getData() + "]";
+
+		return result;
+	}
+	
+	public Node remove(int target) {
+		/* to be completed by student */
+
+		Node n = head;
+		Node temp;
+		Node remove;
+
+		if (target > size) {
+			return null;
+		} else if (target == 0) {
+			head = n.next;
+			head.prev = null;
+			size -= 1;
+			return n;
+
+		} else if (target == size) {
+			for (int i = 0; i <= target - 1; i++) {
+				n = n.next;
+			}
+			size -= 1;
+			remove = n.next;
+			n.next = null;
+
+			return remove;
+
+		} else {
+
+			for (int i = 0; i < target - 1; i++) {
+				n = n.next;
+			}
+
+			// set temp = to 2 nodes later
+			temp = n.next;
+			temp = temp.next;
+
+			remove = n.next; // this n.next is the node you remove
+			remove.prev = null;
+
+			// set n.next = to the node after skip
+			n.next = temp;
+			size -= 1;
+
+			// return the value you removed
+			return remove;
+		}
+	}
+
+	
+	public void add(Node n) {
+		/* to be completed by student */
+		if (tail == null) {
+			head = tail = n;
+		} else {
+			tail.next = n;
+			tail.prev = prev;
+			tail = n;
+			
+		}
+		
+		prev = n;  //set up prev for the next node
+		tail.next = null;
+
+		size += 1;
+	}
+	
+	public void add(int num, Node n) {
+		
+		
+		
+		
+	}
+
+	
+	
+	
+	
+}
