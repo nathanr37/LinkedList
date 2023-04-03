@@ -38,13 +38,12 @@ public class SinglyLinkedList {
 		String result = "[";
 		Node n = head;
 
-		for(int i = 0; i<size-1; i++) {
+		for (int i = 0; i < size - 1; i++) {
 			result += n.getData() + ", ";
 			n = n.next;
 		}
-		
-		result += n.getData() + "]";
 
+		result += n.getData() + "]";
 
 		return result;
 	}
@@ -56,7 +55,7 @@ public class SinglyLinkedList {
 		Node temp;
 		Node remove;
 
-		if(target > size) {
+		if (target > size) {
 			return null;
 		} else if (target == 0) {
 			head = n.next;
@@ -65,7 +64,7 @@ public class SinglyLinkedList {
 
 		} else if (target == size) {
 			for (int i = 0; i <= target - 1; i++) {
-				n=n.next;
+				n = n.next;
 			}
 			size -= 1;
 			remove = n.next;
@@ -75,16 +74,15 @@ public class SinglyLinkedList {
 
 		} else {
 
-			for (int i = 0; i < target-1; i++) {
+			for (int i = 0; i < target - 1; i++) {
 				n = n.next;
 			}
 
 			// set temp = to 2 nodes later
 			temp = n.next;
 			temp = temp.next;
-			
+
 			remove = n.next; // this n.next is the node you remove
-			
 
 			// set n.next = to the node after skip
 			n.next = temp;
